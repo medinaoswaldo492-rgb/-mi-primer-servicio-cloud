@@ -8,12 +8,12 @@ function App() {
   const [error, setError] = useState(false);
 
 const productosFiltrados = productos.filter((producto) => {
-  const coincideNombre = producto.nombre
+  const coincideNombre = producto.Nombre
     .toLowerCase()
     .includes(busqueda.toLowerCase());
 
   const coincideCategoria =
-    categoria === "Todas" || producto.categoria === categoria;
+    categoria === "Todas" || producto.Categoria === categoria;
 
   return coincideNombre && coincideCategoria;
 });
@@ -59,21 +59,7 @@ const productosFiltrados = productos.filter((producto) => {
         }}
       />
 
-      <select
-  value={categoria}
-  onChange={(e) => setCategoria(e.target.value)}
-  style={{
-    padding: "10px",
-    marginBottom: "20px",
-    marginLeft: "10px"
-  }}
->
-  <option value="Todas">Todas las categorías</option>
-  <option value="Computadoras">Computadoras</option>
-  <option value="Accesorios">Accesorios</option>
-  <option value="Redes">Redes</option>
-  <option value="Almacenamiento">Almacenamiento</option>
-</select>
+      
 
       <p>
         Aplicación React consumiendo una API desarrollada
